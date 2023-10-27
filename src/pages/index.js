@@ -12,7 +12,7 @@ export default function Home() {
       <Header />
 
       {/* Rest of the content will go here */}
-      <main className="container mx-auto py-20">
+      <main className="container mx-auto ">
       <Hero />
         {/* Other sections/components will follow */}
       </main>

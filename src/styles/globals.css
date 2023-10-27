@@ -25,3 +25,27 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.bg-hero {
+  background-image: url('/hero4.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (min-width: 1024px) {
+  .bg-herobig {
+      background-image: url('/hero4.png');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+  }
+}
+@media (min-width: 1536px) {
+  .bg-herobig {
+      background-image: url('/hero4.png');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 90% 100%;
+  }
+}
