@@ -33,6 +33,61 @@ body {
   background-size: cover;
 }
 
+.RBtn {
+  display: none;
+  width: 140px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(to right,#77530a,#ffd277,#77530a,#77530a,#ffd277,#77530a);
+  background-size: 250%;
+  background-position: left;
+  color: #ffd277;
+  position: relative;
+  
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition-duration: 1s;
+  overflow: hidden;
+}
+
+.RBtn::before {
+  position: absolute;
+  content: "Request a Quote";
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 97%;
+  height: 90%;
+  border-radius: 8px;
+  transition-duration: 1s;
+  background-color: rgba(0, 0, 0, 0.842);
+  background-size: 200%;
+}
+
+.RBtn:hover {
+  background-position: right;
+  transition-duration: 1s;
+  box-shadow: 0 0 25px #ffd277;
+}
+
+.RBtn:hover::before {
+  background-position: right;
+  transition-duration: 1s;
+}
+
+.RBtn:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 25px #ffd277;
+}
+
+@media (min-width: 768px) {
+  .RBtn {
+    display: flex;
+  }
+}
 @media (min-width: 1024px) {
   .bg-herobig {
       background-image: url('/hero4.png');
