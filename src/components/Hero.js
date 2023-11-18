@@ -8,28 +8,28 @@ const fadeInVariant = {
 
 const Hero = () => {
   return (
-    <section className="bg-black text-white relative 2xl:mt-4">
-      <div className="container mx-auto text-center">
+    <section className="bg-black text-white relative 2xl:mt-4 ">
+      <div className="container mx-auto text-center  ">
 
         {/* Image Placeholder (your background image) with Text Inside */}
         <div className="relative">
-          <div className="absolute inset-0 bg-opacity-30 flex flex-col justify-between mt-4 py-2 h-[26rem] lg:h-[33rem] xl:h-[39rem] bg-hero bg-herobig">
+          <div className="absolute inset-0 bg-opacity-30 flex flex-col justify-between mt-4 py-2 h-[26rem] lg:h-[33rem] xl:h-[39rem] bg-hero bg-herobig border ">
 
             {/* Headlines */}
     <div className='ml-4 sm:ml-16 md:ml-14 lg:ml-36 xl:ml-44 2xl:ml-64  w-[95%] sm:w-5/6 md:w-11/12 lg:w-4/5 xl:w-4/5 2xl:w-[70%] mx-auto '>
             <div className="flex justify-around sm:justify-between ">
               <motion.h1 
-                className="text-2xl sm:text-4xl md:text-5xl xl:text-6xl  font-semibold"
+                className=" sm:text-4xl md:text-5xl xl:text-6xl  font-semibold [font-size:clamp(16px,6vw,60px)]"
                 variants={fadeInVariant}
                 initial="hidden"
                 animate="visible"
                 transition={{ duration: 2.0, delay: 0.2 }}
               >
                 Bright Ideas
-              </motion.h1>
+              </motion.h1> 
 
               <motion.h1 
-                className="text-2xl sm:text-4xl md:text-5xl xl:text-6xl  font-semibold"
+                className=" sm:text-4xl md:text-5xl xl:text-6xl  font-semibold [font-size:clamp(16px,6vw,60px)]"
                 variants={fadeInVariant}
                 initial="hidden"
                 animate="visible"
