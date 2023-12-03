@@ -9,11 +9,11 @@ const Footer = () => {
      
       <div className="flex justify-center space-x-4 mb-6">
 
-        <a href="#" className="text-2xl border border-gold rounded-full p-2 hover:opacity-90 hover:shadow-[0_0_20px_#ffd277] transition ease-in-out duration-300">
+        <a href="https://www.instagram.com/groundedinAZ" target="_blank"  className="text-2xl border border-gold rounded-full p-2 hover:opacity-90 hover:shadow-[0_0_20px_#ffd277] transition ease-in-out duration-300">
             <IoLogoInstagram  className='hover:text-[#CF2872] transition ease-in-out duration-300'/>
             </a>
             
-        <a href="#" className="text-2xl border border-gold rounded-full p-2 hover:opacity-90 hover:shadow-[0_0_20px_#ffd277] transition ease-in-out duration-300">
+        <a href="mailto:Groundedinaz@gmail.com" className="text-2xl border border-gold rounded-full p-2 hover:opacity-90 hover:shadow-[0_0_20px_#ffd277] transition ease-in-out duration-300">
             <IoIosMail className='hover:text-white transition ease-in-out duration-300 ' />
             </a>
         <a href="#" className="inline-block">
@@ -23,7 +23,7 @@ const Footer = () => {
           </div>
         </div>
       </a>
-        <a href="#" className="text-2xl border border-gold rounded-full p-2 hover:opacity-90 hover:text-blue-500 hover:shadow-[0_0_20px_#ffd277] transition ease-in-out duration-300 "><FaFacebookF className='' /></a>
+        <a href="https://www.facebook.com/groundedinAZ" target="_blank" className="text-2xl border border-gold rounded-full p-2 hover:opacity-90 hover:text-blue-500 hover:shadow-[0_0_20px_#ffd277] transition ease-in-out duration-300 "><FaFacebookF /></a>
       </div>
       <ul className="flex flex-wrap justify-center space-x-4 text-lg mb-6">
         <li><a href="#" className="hover:underline">Home</a></li>
