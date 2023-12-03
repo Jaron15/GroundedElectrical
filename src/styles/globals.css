@@ -88,6 +88,9 @@ body {
   
 }
 
+.glow {
+  box-shadow: 0 0 25px #ffd277;
+}
 
 @media (min-width: 768px) {
   .RBtn {

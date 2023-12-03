@@ -4,10 +4,10 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="bg-black text-white sm:px-6 h-20 flex justify-between items-center">
+    <header className="bg-black  text-white sm:px-6 h-20 flex justify-between items-center">
       
       {/* Logo */}
-      <div className="flex items-center h-full ">
+      <div className="flex items-center h-full w-auto ">
         <img src="/GroundedNBG.png" alt="Grounded Electrical Service Logo" className="h-full w-auto" />
       </div>
 
