@@ -27,7 +27,7 @@ const Card = ({name, title, description}) => {
           className="absolute inset-0 bg-gradient-to-br from-pink-500 to-cyan-500 scale-95 blur-[20px] z-[-1]"
           variants={hoverVariants}
         />
-
+ 
         {/* Card Content with Background Image */}
         <motion.div 
           className="w-full h-full bg-cover bg-center flex justify-center items-center"
