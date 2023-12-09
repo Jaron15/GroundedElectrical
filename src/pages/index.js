@@ -4,6 +4,7 @@ import Header from '@/components/Header'
 import Hero from '@/components/Hero';
 import Services from '@/components/Services';
 import Footer from '@/components/Footer';
+import Layout from '@/components/Layout';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -11,10 +12,8 @@ export default function Home() {
   return (
     <div className="bg-black text-white min-h-screen">
       {/* Header */}
-      <Header />
-      <div className='w-full h-0.5 bg-white  bg-gradient-to-r from-darkgold via-gold to-darkgold'>
-
-</div>
+      <Layout>
+     
       {/* Rest of the content will go here */}
       <main className="container mx-auto ">
       <Hero />
@@ -22,10 +21,8 @@ export default function Home() {
         <Services />
 
       </main>
-      <div className='w-full h-0.5 bg-white  bg-gradient-to-r from-darkgold via-gold to-darkgold'>
-
-</div>
-        <Footer />
+      
+      </Layout>
     </div>
   );
 
