@@ -35,7 +35,7 @@ const Card = ({name, title, description}) => {
           variants={hoverVariants}
         >
           <div className='font-bold text-2xl text-shadow '>
-          {name}
+          {title}
           </div>
         </motion.div>
 
