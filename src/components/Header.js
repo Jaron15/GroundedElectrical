@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React, { useState } from 'react';
 
 const Header = () => {
@@ -15,10 +16,10 @@ const Header = () => {
       <div className="flex items-center py-4 space-x-6">
         {/* Navigation */}
         <nav className="hidden md:flex space-x-4">
-          <a href="/" className="hover:text-gold  transition">Home</a>
-          <a href="#" className="hover:text-gold transition">Services</a>
-          <a href="#" className="hover:text-gold transition">About</a>
-          <a href="/contact" className="hover:text-gold transition">Contact</a>
+          <Link href="/" className="hover:text-gold  transition">Home</Link>
+          <Link href="#" className="hover:text-gold transition">Services</Link>
+          <Link href="#" className="hover:text-gold transition">About</Link>
+          <Link href="/contact" className="hover:text-gold transition">Contact</Link>
         </nav>
 
         {/* CTA Button for larger screens */}
@@ -48,10 +49,10 @@ const Header = () => {
       </button>
       
       <nav className="flex flex-col items-center text-3xl space-y-8 mt-10">
-        <a href="/" className="hover:text-gold transition">Home</a>
-        <a href="#" className="hover:text-gold transition">Services</a>
-        <a href="#" className="hover:text-gold transition">About</a>
-        <a href="/contact" className="hover:text-gold transition">Contact</a>
+        <Link href="/" className="hover:text-gold transition">Home</Link>
+        <Link href="#" className="hover:text-gold transition">Services</Link>
+        <Link href="#" className="hover:text-gold transition">About</Link>
+        <Link href="/contact" className="hover:text-gold transition">Contact</Link>
       </nav>
         <div className=' flex justify-center'>
       <button className='RBtn !flex mt-10 ' />

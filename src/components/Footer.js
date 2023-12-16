@@ -2,6 +2,7 @@ import React from 'react';
 import { IoLogoInstagram, IoLogoSnapchat, IoLogoTwitter, IoIosMail  } from 'react-icons/io';
 import { FaFacebookF } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
+import Link from 'next/link';
 
 const Footer = () => {
   return (
@@ -31,10 +32,10 @@ const Footer = () => {
 </div>
 
       <ul className="flex flex-wrap justify-center space-x-4 text-lg mb-6 text-white">
-        <li><a href="#" className="hover:underline">Home</a></li>
-        <li><a href="#" className="hover:underline">Services</a></li>
-        <li><a href="#" className="hover:underline">About</a></li>
-        <li><a href="#" className="hover:underline">Contact</a></li>
+        <li><Link href="#" className="hover:underline">Home</Link></li>
+        <li><Link href="#" className="hover:underline">Services</Link></li>
+        <li><Link href="#" className="hover:underline">About</Link></li>
+        <li><Link href="#" className="hover:underline">Contact</Link></li>
       </ul>
       <p className="text-center text-sm text-gray-400">ROC 348796</p>
     </footer>
