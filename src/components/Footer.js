@@ -30,7 +30,7 @@ const Footer = () => {
 
 </div>
 
-      <ul className="flex flex-wrap justify-center space-x-4 text-lg mb-6">
+      <ul className="flex flex-wrap justify-center space-x-4 text-lg mb-6 text-white">
         <li><a href="#" className="hover:underline">Home</a></li>
         <li><a href="#" className="hover:underline">Services</a></li>
         <li><a href="#" className="hover:underline">About</a></li>
