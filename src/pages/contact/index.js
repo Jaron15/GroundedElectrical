@@ -11,16 +11,53 @@ const ContactForm = () => {
     phoneNumber: '',
     details: '',
   });
+  const [errors, setErrors] = useState({});
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  //validation logic
+  const validateName = (name) => {
+    if (!name.trim()) {
+      setErrors((prevErrors) => ({ ...prevErrors, name: "Name is required." }));
+    } else {
+      setErrors((prevErrors) => ({ ...prevErrors, name: "" }));
+    }
   };
+  
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setErrors((prevErrors) => ({ ...prevErrors, email: "Invalid email address." }));
+    } else {
+      setErrors((prevErrors) => ({ ...prevErrors, email: "" }));
+    }
+  };
+  
+  const validateService = (service) => {
+    if (!service.trim()) {
+      setErrors((prevErrors) => ({ ...prevErrors, service: "Service is required." }));
+    } else {
+      setErrors((prevErrors) => ({ ...prevErrors, service: "" }));
+    }
+  };
+  
+  //validation logic end 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData); // Handle the form submission here
-  };
-
+    validateName(formData.name);
+    validateEmail(formData.email);
+    validateService(formData.service);
+  
+    if (!errors.name && !errors.email && !errors.service) {
+      console.log(formData); // Proceed with form submission
+    }
+    }
+  
+//framer variants
   const formVariants = {
     hidden: {
    
@@ -74,6 +111,7 @@ const ContactForm = () => {
       }
     }
   };
+  //framer variants end 
 
   return (
       <div className='bg-black min-h-screen mx-auto w-full'>
@@ -92,22 +130,40 @@ const ContactForm = () => {
                     >
     <motion.div className="mb-6" variants={inputVariants}>
     <label htmlFor="name" className="block text-white text-sm font-bold mb-2">Name:</label>
-    <input type="text" id="name" name="name" placeholder="Enter your name" value={formData.name} onChange={handleChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+    <input type="text" id="name" name="name" placeholder="Enter your name" 
+    value={formData.name} 
+    onChange={handleChange}
+    onBlur={() => validateName(formData.name)} 
+    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+    {errors.name && <p className="text-red-500 text-xs">{errors.name}</p>}
   </motion.div>
 
   <motion.div className="mb-6" variants={inputVariants}>
     <label htmlFor="email" className="block text-white text-sm font-bold mb-2">Email:</label>
-    <input type="email" id="email" name="email" placeholder="Enter your email" value={formData.email} onChange={handleChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+    <input type="email" id="email" name="email" placeholder="Enter your email" 
+    value={formData.email} 
+    onChange={handleChange} 
+    onBlur={() => validateEmail(formData.email)}
+    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+    {errors.email && <p className="text-red-500 text-xs">{errors.email}</p>}
   </motion.div>
 
   <motion.div className="mb-6" variants={inputVariants}>
     <label htmlFor="service" className="block text-white text-sm font-bold mb-2">Service:</label>
-    <input type="text" id="service" name="service" placeholder="Type of service needed" value={formData.service} onChange={handleChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+    <input type="text" id="service" name="service" placeholder="Type of service needed" 
+    value={formData.service} 
+    onChange={handleChange} 
+    onBlur={() => validateService(formData.service)}
+    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+    {errors.service && <p className="text-red-500 text-xs">{errors.service}</p>}
   </motion.div>
 
   <motion.div className="mb-6" variants={inputVariants}>
     <label htmlFor="phoneNumber" className="block text-white text-sm font-bold mb-2">Phone Number:</label>
-    <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number (optional)" value={formData.phoneNumber} onChange={handleChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+    <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number (optional)" 
+    value={formData.phoneNumber} 
+    onChange={handleChange} 
+    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
   </motion.div>
 
   <motion.div className="mb-6" variants={inputVariants}>
