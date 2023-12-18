@@ -1,6 +1,9 @@
 import Layout from '@/components/Layout';
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import emailjs from 'emailjs-com';
+import Modal from '../../components/Modal'; 
+
 
 
 const ContactForm = () => {
@@ -12,6 +15,9 @@ const ContactForm = () => {
     details: '',
   });
   const [errors, setErrors] = useState({});
+  const [showModal, setShowModal] = useState(false);
+  const [modalMessage, setModalMessage] = useState('');
+
 
   //validation logic
   const validateName = (name) => {
@@ -40,6 +46,7 @@ const ContactForm = () => {
   };
   
   //validation logic end 
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -51,9 +58,37 @@ const ContactForm = () => {
     validateName(formData.name);
     validateEmail(formData.email);
     validateService(formData.service);
-  
-    if (!errors.name && !errors.email && !errors.service) {
-      console.log(formData); // Proceed with form submission
+    const formIsValid = !errors.name && !errors.email && !errors.service &&
+    formData.name.trim() && formData.email.trim() && formData.service.trim();
+
+    if (formIsValid) {
+        //email service
+        const templateParams = {
+            name: formData.name,
+            service: formData.service,
+            email: formData.email,
+            phoneNumber: formData.phoneNumber ? formData.phoneNumber : 'Not provided',
+            details: formData.details ? formData.details : 'No additional details provided',
+          };
+          emailjs.send(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID, process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID, templateParams, process.env.NEXT_PUBLIC_EMAILJS_USER_ID)
+          .then((response) => {
+            console.log('Email successfully sent!', response.status, response.text);
+            setModalMessage('Thank you! Your message has been sent successfully.');
+        setShowModal(true);
+            setFormData({
+                email: '',
+                name: '',
+                service: '',
+                phoneNumber: '',
+                details: '',
+            })
+          }, (error) => {
+            console.log('Failed to send email.', error);
+            setModalMessage('Failed to send the email. Please try again.');
+            setShowModal(true);
+
+          });
+      //email service end
     }
     }
   
@@ -115,12 +150,13 @@ const ContactForm = () => {
 
   return (
       <div className='bg-black min-h-screen mx-auto w-full'>
+         <Modal show={showModal} message={modalMessage} onClose={() => setShowModal(false)} />
             <Layout>
             <motion.div
             variants={borderVariants}
             initial="hidden"
             animate="visible"
-             className="sm:p-0.5 bg-gradient-to-t from-darkgold via-gold to-darkgold rounded-lg mx-auto w-full sm:max-w-lg md:max-w-xl lg:max-w-xl xl:max-w-4xl my-10">
+             className="sm:p-0.5 bg-gradient-to-t from-darkgold via-gold to-darkgold rounded-lg mx-auto w-full sm:max-w-lg md:max-w-xl lg:max-w-xl xl:max-w-4xl sm:my-10">
                     <motion.form
                         onSubmit={handleSubmit}
                         variants={formVariants}
