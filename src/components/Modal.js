@@ -28,12 +28,12 @@ const Modal = ({ show, message, onClose }) => {
         },
       };
     return (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div className="fixed inset-0 bg-black bg-opacity-0 flex items-center justify-center z-50">
                 <motion.div 
                 variants={modalVariant}
                 initial="hidden"
                 animate="visible"
-                className='p-0.5 w-4/5 sm:w-auto bg-gradient-to-t from-darkgold via-gold to-darkgold rounded-lg shadow-[0_0_15px_#ffd277] mb-28 sm:mb-0 text-center'>
+                className='p-0.5 w-4/5 sm:w-auto bg-gradient-to-t from-darkgold via-gold to-darkgold rounded-lg shadow-[0_0_15px_#ffd277] mb-28  text-center'>
             <div className="bg-black text-white p-10  rounded shadow-lg">
                 <p>{message}</p>
             </div>

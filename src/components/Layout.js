@@ -5,7 +5,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header />
-      <div className='w-full h-0.5 bg-white  bg-gradient-to-r from-darkgold via-gold to-darkgold'>
+      <div className='w-full h-0.5 bg-white  bg-gradient-to-r from-darkgold via-gold to-darkgold sticky top-20 z-30'>
 
 </div>
       <meta name='theme-color' content='#18181B' />
