@@ -61,9 +61,8 @@ const services = [
           <div className="container mx-auto p-6 bg-black">
             <div className="flex justify-center gap-4 mb-6">
               {[ 'Residential', 'Commercial'].map(type => (
-                 <div className="relative"> {/* Wrap button with div for positioning the underline */}
+                 <div className="relative" key={type}> 
                  <button
-                   key={type}
                    onClick={() => handleFilterChange(type)}
                    className={`text-white font-bold py-2 px-4 rounded ${filter === type ? 'bg-black' : ''}`}
                  >
