@@ -7,6 +7,7 @@ import SMlinks from './SMlinks';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  
   const sidebarVariants = {
     hidden: { x: '100%', opacity: 0 },
     visible: { x: 0, opacity: 1, transition: { type: 'spring', duration: 0.5 } }
@@ -29,6 +30,18 @@ const Header = () => {
     }
   }, [menuOpen])
   
+  useEffect(() => {
+    const script = document.createElement('script');
+
+    script.src = "https://online-booking.housecallpro.com/script.js?token=a33769021a7a473399db9ac1c868ab3a&orgName=Grounded-Electrical-Service-LLC";
+    script.async = true;
+
+    document.body.appendChild(script);
+
+    return () => {
+        document.body.removeChild(script);
+    }
+}, []);
 
   return (
     <header className="bg-black text-white pr-4 sm:px-6 h-20 flex justify-between items-center sticky top-0 z-40 ">
@@ -60,7 +73,11 @@ const Header = () => {
         </nav>
 
         {/* CTA Button for larger screens */}
-        <Link href="/contact" className="RBtn " />
+        <button 
+         data-token="a33769021a7a473399db9ac1c868ab3a" 
+            data-orgname="Grounded-Electrical-Service-LLC" 
+            onClick={() => window.HCPWidget?.openModal()} 
+            className="RBtn " />
 
         {/* Hamburger Icon for smaller screens */}
         <button
@@ -162,7 +179,11 @@ const Header = () => {
               transition: { delay: 0.5, type: "spring", duration: 0.5 },
             }}
             className=" flex justify-center">
-              <Link href="/contact" className="RBtn !flex mt-10 " />
+              <button  
+               data-token="a33769021a7a473399db9ac1c868ab3a" 
+            data-orgname="Grounded-Electrical-Service-LLC" 
+            onClick={() => window.HCPWidget?.openModal()} 
+            className="RBtn !flex mt-10" />
             </motion.div>
 
             <motion.div 
