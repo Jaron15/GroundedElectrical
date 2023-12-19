@@ -48,7 +48,7 @@ const Header = () => {
           <Link href="/" className="hover:text-gold  transition">
             Home
           </Link>
-          <Link href="#" className="hover:text-gold transition">
+          <Link href="/services" className="hover:text-gold transition">
             Services
           </Link>
           <Link href="#" className="hover:text-gold transition">
@@ -124,7 +124,7 @@ const Header = () => {
                   transition: { delay: 0.2, type: "spring", duration: 0.5 },
                 }}
               >
-                <Link href="#" className="hover:text-gold transition">
+                <Link href="/services" className="hover:text-gold transition">
                   Services
                 </Link>
               </motion.div>

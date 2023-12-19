@@ -7,7 +7,7 @@ import SMlinks from './SMlinks';
 
 const Footer = () => {
   return (
-      <footer className="bg-black text-gray-600 p-6  border-red-500 w-full">
+      <footer className="bg-black text-gray-600 p-6  border-red-500 w-full ">
      
      <SMlinks x={4} />
 
