@@ -82,7 +82,7 @@ const services = [
             className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 overflow-auto no-scrollbar max-h-[42rem]">
                 
             {filteredServices.map((service, index) => (
-                <div className='p-0.5 bg-gradient-to-t from-darkgold via-gold to-darkgold rounded-lg mx-auto w-full'>
+                <div key={index} className='p-0.5 bg-gradient-to-t from-darkgold via-gold to-darkgold rounded-lg mx-auto w-full'>
               <div key={index} className="text-white p-2 sm:p-4 rounded shadow hover:shadow-lg transition duration-300 ease-in-out items-center flex justify-center bg-black h-full bg-zinc-900">
                 <h3 className="font-semibold text-lg text-center cursor-pointer">{service.service}</h3>
                 {/* You can add a brief description here */}
