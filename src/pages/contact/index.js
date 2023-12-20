@@ -207,7 +207,7 @@ const ContactForm = () => {
     <textarea id="details" name="details" placeholder="Your message or comments" value={formData.details} onChange={handleChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" rows="4"></textarea>
   </motion.div>
 
-      <motion.button type="submit" variants={buttonVariants} className="custom-button relative w-40 h-14 border-4 border-ridge border-blue-600 bg-transparent text-white text-lg font-bold rounded-md cursor-pointer transition duration-1000"
+      <motion.button type="submit" variants={buttonVariants} className="inglow-button relative w-40 h-14 border-4 border-ridge border-blue-600 bg-transparent text-white text-lg font-bold rounded-md cursor-pointer transition duration-1000"
 >
 Submit
 </motion.button>

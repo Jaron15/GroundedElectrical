@@ -15,6 +15,8 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+
+/* hide scrollbar */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -23,6 +25,8 @@
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+/* hide scrollbar end */
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -33,6 +37,7 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+/* hero section */
 .bg-hero {
   background-image: url('/hero4.png');
   background-position: center;
@@ -58,7 +63,9 @@ body {
   transition-duration: 1s;
   overflow: hidden;
 }
+/* hero section end */
 
+/* Custom reflect button  */
 .RBtn::before {
   position: absolute;
   content: "Request a Quote";
@@ -89,10 +96,10 @@ body {
   transform: scale(0.95);
   box-shadow: 0 0 25px #ffd277;
 }
+/* Custom reflect button end  */
 
 .text-shadow {
   text-shadow: 4px 4px 7px rgb(0, 0, 0), -4px -4px 7px rgb(0, 0, 0);
-  
 }
 
 .glow {
@@ -100,9 +107,7 @@ body {
 }
 
 /* inner glow button */
-/* Custom button styles */
-/* Custom button styles */
-.custom-button {
+.inglow-button {
   position: relative;
   border: 3px ridge #FAF3AB;
   outline: none;
@@ -117,8 +122,8 @@ body {
   background-color: black;
 }
 
-.custom-button::after,
-.custom-button::before {
+.inglow-button::after,
+.inglow-button::before {
   content: "";
   position: absolute;
   width: 95%;
@@ -128,26 +133,56 @@ body {
   transform: scale(1);
 }
 
-.custom-button::after {
+.inglow-button::after {
   top: -10px;
   left: 3%;
 }
 
-.custom-button::before {
+.inglow-button::before {
   top: 60%;
   left: 3%;
 }
 
-.custom-button:hover::before,
-.custom-button:hover::after {
+.inglow-button:hover::before,
+.inglow-button:hover::after {
   transform: scale(0);
 }
 
-.custom-button:hover {
+.inglow-button:hover {
   box-shadow: inset 0px 0px 25px #FAF3AB;
 }
+/* inner glow button end*/
 
-/* inner glow button */
+/* NAV */
+.nav-item a {
+  position: relative;
+  color: inherit; 
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-item a::after {
+  content: '';
+  position: absolute;
+  left: 50%; 
+  bottom: -5px; 
+  background-image: linear-gradient(to right, #A37B4A, #FAF3AB, #A37B4A); 
+  height: 2px; 
+  width: 0;
+  transform: translateX(-50%);
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-item a:hover::after {
+  visibility: visible;
+  width: 100%; 
+  left: 0; 
+  transform: translateX(0%); 
+}
+/* NAV end */
+
+
 
 @media (min-width: 768px) {
   .RBtn {
