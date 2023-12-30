@@ -68,7 +68,7 @@ body {
 /* Custom reflect button  */
 .RBtn::before {
   position: absolute;
-  content: "Request a Quote";
+  content: "Book Now";
   color: white;
   display: flex;
   align-items: center;
