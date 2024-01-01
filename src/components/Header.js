@@ -57,18 +57,18 @@ const Header = () => {
       <div className="flex items-center py-4 space-x-6">
         {/* Navigation */}
         <nav className="hidden md:flex space-x-4">
-          <Link href="/" className="hover:text-gold  transition">
-            Home
-          </Link>
-          <Link href="/services" className="hover:text-gold transition">
-            Services
-          </Link>
-          <Link href="#" className="hover:text-gold transition">
-            About
-          </Link>
-          <Link href="/contact" className="hover:text-gold transition">
-            Contact
-          </Link>
+        <span className="nav-item">
+            <Link href="/">Home</Link>
+          </span>
+          <span className="nav-item">
+            <Link href="/services">Services</Link>
+          </span>
+          <span className="nav-item">
+            <Link href="#">About</Link>
+          </span>
+          <span className="nav-item">
+            <Link href="/contact">Contact</Link>
+          </span>
         </nav>
 
         {/* CTA Button for larger screens */}
