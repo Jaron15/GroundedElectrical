@@ -5,6 +5,7 @@ import Hero from '@/components/Hero';
 import Services from '@/components/Services';
 import Footer from '@/components/Footer';
 import Layout from '@/components/Layout';
+import ReviewSlider from '@/components/ReviewSlider';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,7 +20,7 @@ export default function Home() {
       <Hero />
         {/* Other sections/components will follow */}
         <Services />
-
+        <ReviewSlider />
       </main>
       
       </Layout>
