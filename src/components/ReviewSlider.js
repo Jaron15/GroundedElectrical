@@ -20,7 +20,7 @@ function ReviewSlider() {
     
       return (
         <div className="w-full  h-full flex flex-col  items-center justify-center items-center mb-6 ">
-            <div className="relative text-center mb-6" >
+            <div className="relative text-center mb-10" >
   <h1 className='text-3xl font-semibold inline-block'>Customer Experiences</h1>
   <div className='w-[calc(100%+30px)] h-0.5 bg-white mt-1 bg-gradient-to-r from-darkgold via-gold to-darkgold absolute left-1/2 transform -translate-x-1/2'></div>
 </div>

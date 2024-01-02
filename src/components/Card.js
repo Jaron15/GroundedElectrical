@@ -41,13 +41,13 @@ const Card = ({name, title, description}) => {
 
         {/* Text Content */}
         <motion.div 
-          className="absolute top-0 left-0 w-full h-full flex flex-col justify-center gap-2.5 text-zinc-200 p-5 text-center "
+          className="absolute top-0 left-0 w-full h-full flex flex-col justify-center gap-1 md:gap-2.5 text-zinc-200 p-5 text-center "
           initial={{ opacity: 0, translateY: 50 }}
           variants={{
             hover: { opacity: 1, translateY: 0, transition: { duration: 0.6 } }
           }}
         >
-          <h2 className="text-4xl font-bold ">{title}</h2>
+          <h2 className="text-3xl md:text-4xl font-bold hidden sm:block ">{title}</h2>
           <p>
             {description}
           </p>
