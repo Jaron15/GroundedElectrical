@@ -19,7 +19,12 @@ function ReviewSlider() {
     
     
       return (
-        <div className="w-full  h-full flex justify-center items-center ">
+        <div className="w-full  h-full flex flex-col  items-center justify-center items-center mb-6 ">
+            <div className="relative text-center mb-6" >
+  <h1 className='text-3xl font-semibold inline-block'>Customer Experiences</h1>
+  <div className='w-[calc(100%+30px)] h-0.5 bg-white mt-1 bg-gradient-to-r from-darkgold via-gold to-darkgold absolute left-1/2 transform -translate-x-1/2'></div>
+</div>
+           
           <Swiper
             effect={'coverflow'}
             grabCursor={true}
@@ -38,8 +43,8 @@ function ReviewSlider() {
             className="w-full max-w-6xl"
           >
              {slides.map((slide, index) => (
-          <SwiperSlide key={index} className="!w-72 !h-72 bg-white rounded shadow-lg flex justify-center items-center text-black p-4 mb-2">
-            <div className="flex flex-col justify-between h-full">
+          <SwiperSlide key={index} className="!w-72 !h-72  rounded shadow-lg flex justify-center items-center text-white p-0.5 mb-2 bg-gradient-to-t from-darkgold via-gold to-darkgold">
+            <div className="flex flex-col justify-between h-full w-full bg-zinc-900 p-4">
               <div className="text-center my-auto">
                 <p>{slide.text.length > 200 ? `${slide.text.substring(0, 250)}` : slide.text}</p> {/* Truncate long text */}
               </div>
