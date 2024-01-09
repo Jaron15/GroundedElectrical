@@ -2,30 +2,9 @@ import Layout from '@/components/Layout';
 import React, { useState, useEffect } from 'react'
 import { motion, useAnimation } from 'framer-motion';
 import { useRouter } from 'next/router';
+import services from '@/data';
+import Link from 'next/link';
 
-const services = [
-    { service: "Repair, install, replace, retro-fit anything electrical", type: "Both" },
-    { service: "Electrical safety inspections", type: "Both" },
-    { service: "Residential generators", type: "Residential" },
-    { service: "Lighting", type: "Both" },
-    { service: "LED lighting", type: "Both" },
-    { service: "Outlet install 120v, 250v", type: "Both" },
-    { service: "Ceiling fans repair or replace", type: "Both" },
-    { service: "Electrical Breaker repair or replace", type: "Both" },
-    { service: "Electrical Panel upgrades", type: "Both" },
-    { service: "AFCI and GFCI electrical outlets", type: "Both" },
-    { service: "Home automation", type: "Residential" },
-    { service: "Lighting controls", type: "Both" },
-    { service: "Landscape lighting", type: "Both" },
-    { service: "Hot tub hookups", type: "Residential" },
-    { service: "EV car charger install", type: "Both" },
-    { service: "Outdoor kitchen power install", type: "Residential" },
-    { service: "Dedicated circuit for appliances and large equipment", type: "Both" },
-    { service: "Kitchen and bathroom remodel", type: "Both" },
-    { service: "Service", type: "Commercial" },
-    { service: "Tenant improvements", type: "Commercial" }
-  ];
-  
 
   function Services() {
     const [filter, setFilter] = useState('Residential');
@@ -92,14 +71,16 @@ const services = [
             animate={controls}
             className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 overflow-auto no-scrollbar max-h-[28rem] sm:max-h-[42rem]">
                 
-            {filteredServices.map((service, index) => (
-                <div key={index} className='p-0.5 bg-gradient-to-t from-darkgold via-gold to-darkgold rounded-lg mx-auto w-full'>
-              <div className="text-white p-2 sm:p-4 rounded shadow hover:shadow-lg transition duration-300 ease-in-out items-center flex justify-center bg-black h-full bg-zinc-900">
-                <h3 className="font-semibold text-lg text-center cursor-pointer">{service.service}</h3>
-                {/* You can add a brief description here */}
-              </div>
-              </div>
-            ))}
+                {filteredServices.map((service, index) => (
+  <div key={index} className='p-0.5 bg-gradient-to-t from-darkgold via-gold to-darkgold rounded-lg mx-auto w-full'>
+    {/* <Link href={`/services/${service.id}`}>  */}
+      <div className="text-white p-2 sm:p-4 rounded shadow hover:shadow-lg transition duration-300 ease-in-out items-center flex justify-center bg-black h-full bg-zinc-900">
+        <h3 className="font-semibold text-lg text-center cursor-pointer">{service.service}</h3>
+      </div>
+    {/* </Link> */}
+  </div>
+))}
+
           </motion.div>
         </div>
       </Layout>
