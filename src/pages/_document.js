@@ -5,7 +5,7 @@ export default function Document() {
     <Html lang="en">
       <Head>
           {/* Google Tag */}
-          <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11447204532">
+          <script async src="https://www.googletagmanager.com/gtag/js?id=G-WL1Z70MJ68">
             
           </script>
           <script
@@ -14,7 +14,7 @@ export default function Document() {
                 window.dataLayer = window.dataLayer || [];
                 function gtag() { dataLayer.push(arguments); }
                 gtag('js', new Date());
-                gtag('config', 'AW-11447204532');
+                gtag('config', 'G-WL1Z70MJ68');
               `,
             }}
           />
