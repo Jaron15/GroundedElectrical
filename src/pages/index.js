@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import Layout from '@/components/Layout';
 import ReviewSlider from '@/components/ReviewSlider';
 import Head from 'next/head';
+import AboutBlurb from '@/components/AboutBlurb';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -48,6 +49,7 @@ export default function Home() {
       <Hero />
         {/* Other sections/components will follow */}
         <Services />
+        <AboutBlurb />
         <ReviewSlider />
       </main>
       

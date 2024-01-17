@@ -64,7 +64,7 @@ const Header = () => {
             <Link href="/services">Services</Link>
           </span>
           <span className="nav-item">
-            <Link href="#">About</Link>
+            <Link href="/about">About</Link>
           </span>
           <span className="nav-item">
             <Link href="/contact">Contact</Link>
@@ -128,9 +128,11 @@ const Header = () => {
                   transition: { delay: 0.1, type: "spring", duration: 0.5 },
                 }}
               >
-                <Link href="/" className="hover:text-gold transition">
+                <span className="nav-item">
+                <Link href="/" >
                   Home
                 </Link>
+                </span>
               </motion.div>
               <motion.div
                 initial={{ x: "100%", opacity: 0 }}
@@ -140,9 +142,11 @@ const Header = () => {
                   transition: { delay: 0.2, type: "spring", duration: 0.5 },
                 }}
               >
-                <Link href="/services" className="hover:text-gold transition">
+                <span className="nav-item">
+                <Link href="/services" >
                   Services
                 </Link>
+                </span>
               </motion.div>
               <motion.div
                 initial={{ x: "100%", opacity: 0 }}
@@ -152,9 +156,11 @@ const Header = () => {
                   transition: { delay: 0.3, type: "spring", duration: 0.5 },
                 }}
               >
-                <Link href="#" className="hover:text-gold transition">
+                <span className="nav-item">
+                <Link href="/about" >
                   About
                 </Link>
+                </span>
               </motion.div>
               <motion.div
                 initial={{ x: "100%", opacity: 0 }}
@@ -164,9 +170,11 @@ const Header = () => {
                   transition: { delay: 0.4, type: "spring", duration: 0.5 },
                 }}
               >
-                <Link href="/contact" className="hover:text-gold transition">
+                <span className="nav-item">
+                <Link href="/contact" >
                   Contact
                 </Link>
+                </span>
               </motion.div>
             </nav>
 

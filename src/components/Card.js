@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 const Card = ({name, title, description}) => {
+  const [supportsHover, setSupportsHover] = useState(false);
+
+    useEffect(() => {
+        setSupportsHover(window.matchMedia('(hover: hover)').matches);
+        console.log(supportsHover);
+    }, []);
+
   // Variants for the hover state
   const hoverVariants = {
     hover: {
-      scale: 2.5,
-      rotate: 20,
-      filter: 'blur(7px) ' ,
-      opacity: 1,
+      scale: supportsHover && 2.5,
+      rotate: supportsHover && 20,
+      filter: supportsHover && 'blur(7px) ' ,
+      opacity: supportsHover && 1,
       translateY: 0,
       transition: {
         duration: .4
@@ -40,7 +47,7 @@ const Card = ({name, title, description}) => {
         </motion.div>
 
         {/* Text Content */}
-        <motion.div 
+        {supportsHover && <motion.div 
           className="absolute top-0 left-0 w-full h-full flex flex-col justify-center gap-1 md:gap-2.5 text-zinc-200 p-5 text-center "
           initial={{ opacity: 0, translateY: 50 }}
           variants={{
@@ -51,7 +58,7 @@ const Card = ({name, title, description}) => {
           <p>
             {description}
           </p>
-        </motion.div>
+        </motion.div>}
       </motion.div>
     </div>
   );

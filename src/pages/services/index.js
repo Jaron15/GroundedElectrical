@@ -60,7 +60,7 @@ import Link from 'next/link';
                    {type}
                  </button>
                  {filter === type && (
-                   <div className='w-[calc(100%+5px)] h-0.5 bg-white mt-1 bg-gradient-to-r from-darkgold via-gold to-darkgold absolute bottom-0 left-1/2 transform -translate-x-1/2'></div>
+                   <div className='w-[calc(100%+15px)] h-0.5 mt-1 bg-underline-gradient absolute bottom-0 left-1/2 transform -translate-x-1/2'></div>
                  )}
                </div>
               ))}

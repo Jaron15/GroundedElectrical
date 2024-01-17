@@ -20,6 +20,7 @@ module.exports = {
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'underline-gradient': 'linear-gradient(to right, #000000, #A37B4A, #FAF3AB, #A37B4A, #000000)',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
