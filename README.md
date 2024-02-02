@@ -2,6 +2,7 @@
 
 ## Overview
 This project is a dynamic and user-friendly website designed for a local Arizona electrical service company, Grounded Electrical Service. It serves as a comprehensive digital platform, providing detailed information about the company's services, customer testimonials, and easy online engagement options.
+
 [Deployed Application](https://www.groundedinaz.com)
 
 ## Features
